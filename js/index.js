@@ -93,9 +93,34 @@ document.addEventListener('DOMContentLoaded', function () {
             wrapper.style.display = 'block'
             loader.style.display = 'none'
             result.data.forEach(data => {
-                let card = createCard(data)
+                const card = createCard(data)
                 country.innerHTML += card
-                
+                const cardd = document.querySelectorAll('#cardd')
+                cardd.forEach(res => {
+                    res.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        let isName = this.getAttribute('data-name')
+                        fetch(`${BASE_URL}/countries/${isName}`, {
+                            method: "GET"
+                        })
+                            .then(res => {
+                                if (res.ok) {
+                                    return res.json()
+                                }
+                            })
+                            .then(data => {
+                                let oneCount = createCountry(data)
+                                country.innerHTML = oneCount;
+                                const back = document.getElementById('back')
+                                back && back.addEventListener('click', function () {
+                                   window.location.reload()
+                                })
+                            })
+                            .catch(err => {
+                                console.log(err);
+                            })
+                    })
+                })
             });
 
         })

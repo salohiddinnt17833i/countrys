@@ -106,8 +106,7 @@ li {
     background-color: transparent;
 }
 
-#btn-chiqish
-{
+#btn-chiqish {
     height: 40px;
     padding: 10px;
     background-color: transparent;
@@ -115,6 +114,7 @@ li {
     border: 1px solid #ccc;
     cursor: pointer;
 }
+
 .country {
     padding: 20px 60px;
     display: flex;
@@ -122,10 +122,11 @@ li {
     gap: 88px;
     justify-content: center;
 }
-#cardd
-{
+
+#cardd {
     cursor: pointer;
 }
+
 .country .card {
     width: 264px;
     height: 336px;
@@ -158,7 +159,10 @@ li {
 .cont .back {
     padding: 5px 10px;
     background-color: transparent;
-    border: none;
+    border: 2px solid rgba(99, 99, 99, 0.2);
+    border-radius: 4px;
+    color: #ccc;
+    cursor: pointer;
     margin-bottom: 50px;
     font-size: 20px;
 }
@@ -168,15 +172,16 @@ li {
     align-items: center;
     gap: 100px;
 }
-.cont .data .img
-{
+
+.cont .data .img {
     width: 100%;
 }
-.cont .data .img img
-{
+
+.cont .data .img img {
     width: 100%;
     border-radius: 6px;
 }
+
 .cont .data .data-title {
     gap: 130px;
     display: flex;
@@ -184,7 +189,7 @@ li {
 }
 
 .cont .data .data-title h3 {
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
@@ -223,8 +228,8 @@ li {
     .cont .data .data-title {
         gap: 20px;
     }
-    .cont .data .data-title
-    {
+
+    .cont .data .data-title {
         gap: 0px;
     }
 }
@@ -233,8 +238,8 @@ li {
     .country {
         gap: 40px;
     }
-    .cont .data
-    {
+
+    .cont .data {
         display: flex;
         flex-direction: column;
 
@@ -288,23 +293,24 @@ li {
     .navigation .dark {
         font-size: 14px;
     }
-    .cont .data .data-title{
+
+    .cont .data .data-title {
         display: flex;
         flex-direction: column;
     }
-    .cont .data .data-title .right
-    {
-    }
+
+    .cont .data .data-title .right {}
 }
 
 @media screen and (max-width: 340px) {
     #darkModeToggle p {
         display: none;
     }
-    .wrapper
-    {
+
+    .wrapper {
         padding: 20px;
     }
+
     .main form .search {
         width: 180px;
         margin-bottom: 20px;
