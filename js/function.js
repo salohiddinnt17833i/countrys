@@ -11,7 +11,7 @@ function createCard(country) {
 }
 function createOneCard(country) {
     return `
-        <div class="card">
+        <div data-name="${country.name.slug}" id="oneCard" class="card">
             <img src="${country.flags.png}" alt="">
             <h3>${country.name.common}</h3>
             <p>Population: ${country.population}</p>

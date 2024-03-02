@@ -70,6 +70,30 @@ inpsearch && inpsearch.addEventListener('click', function (e) {
             result.data.forEach(data => {
                 let card = createOneCard(data);
                 country.innerHTML = card;
+                const oneCard = document.getElementById('oneCard')
+                oneCard.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    let isName = this.getAttribute('data-name')
+                    fetch(`${BASE_URL}/countries/${isName}`, {
+                        method: "GET"
+                    })
+                        .then(res => {
+                            if (res.ok) {
+                                return res.json()
+                            }
+                        })
+                        .then(data => {
+                            let oneCount = createCountry(data)
+                            country.innerHTML = oneCount;
+                            const back = document.getElementById('back')
+                            back && back.addEventListener('click', function () {
+                                window.location.reload()
+                            })
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        })
+                })
             });
         })
         .catch(err => {
@@ -109,11 +133,12 @@ document.addEventListener('DOMContentLoaded', function () {
                                 }
                             })
                             .then(data => {
+                                console.log(data);
                                 let oneCount = createCountry(data)
                                 country.innerHTML = oneCount;
                                 const back = document.getElementById('back')
                                 back && back.addEventListener('click', function () {
-                                   window.location.reload()
+                                    window.location.reload()
                                 })
                             })
                             .catch(err => {
@@ -122,13 +147,59 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                 })
             });
-
         })
         .catch(err => {
             console.log(err);
         })
 });
 
+
+regionSelect.addEventListener('click', function (e) {
+    e.preventDefault();
+    fetch(`${BASE_URL}/countries?region=${regionSelect.value}`, {
+        method: "GET"
+    })
+        .then(res => {
+            return res.json()
+        })
+        .then(result => {
+            country.innerHTML = ''
+            result.data.forEach(data => {
+                const card = createCard(data)
+                country.innerHTML += card
+                const cardd = document.querySelectorAll('#cardd')
+                cardd.forEach(res => {
+                    res.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        let isName = this.getAttribute('data-name')
+                        fetch(`${BASE_URL}/countries/${isName}`, {
+                            method: "GET"
+                        })
+                            .then(res => {
+                                if (res.ok) {
+                                    return res.json()
+                                }
+                            })
+                            .then(data => {
+                                console.log(data);
+                                let oneCount = createCountry(data)
+                                country.innerHTML = oneCount;
+                                const back = document.getElementById('back')
+                                back && back.addEventListener('click', function () {
+                                    window.location.reload()
+                                })
+                            })
+                            .catch(err => {
+                                console.log(err);
+                            })
+                    })
+                })
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        })
+})
 
 
 
