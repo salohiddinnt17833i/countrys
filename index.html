@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <title>Where is the world</title>
+</head>
+
+<body id="body">
+
+    <div class="loading">
+        <h1>Yuklanmoqda...</h1>
+    </div>
+
+    <div id="allWrapper">
+        <div class="navigation">
+            <a class="title a" href="./index.html">Where is the world?</a>
+            <div class="darkMode">
+                <button id="darkModeToggle" class="dark">
+                    <i class="fa-regular fa-moon"></i>
+                    <i class="fa-regular fa-sun"></i>
+                    <p class="dark">Dark Mode</p>
+                </button>
+            </div>
+        </div>
+        <main class="main">
+            <form class="main-form">
+                <label class="search">
+                    <input id="search" type="text" placeholder="Search for a country...">
+                    <i id="fa-solid" class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </form>
+            <select id="region-select">
+                <option value="Filter by Region">Filter by Region</option>
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </main>
+        <div id="country" class="country">
+            
+        </div>
+    </div>
+
+
+    <script type="module" src="./js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css"></script>
+</body>
+
+</html>

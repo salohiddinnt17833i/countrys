@@ -1,0 +1,318 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans';
+}
+
+.loading {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    background-color: cadetblue;
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style-type: none;
+    color: black;
+}
+
+#allWrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+
+.navigation {
+    max-width: 1440px;
+    width: 100%;
+    margin-top: -1px;
+    position: fixed;
+    padding: 19px 60px;
+    height: 80px;
+    box-shadow: 0px 10px 20px -20px rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.navigation a {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.darkMode button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.darkMode .dark .fa-sun {
+    display: none;
+}
+
+/* Main section */
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 100px 60px 20px 60px;
+}
+
+.main form .search {
+    width: 480px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px 20px;
+    gap: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main form .search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+}
+
+.main form .search #fa-solid {
+    font-size: 10px;
+}
+
+.main select {
+    padding: 14px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: transparent;
+}
+
+#btn-chiqish
+{
+    height: 40px;
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.country {
+    padding: 20px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 88px;
+    justify-content: center;
+}
+#cardd
+{
+    cursor: pointer;
+}
+.country .card {
+    width: 264px;
+    height: 336px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+}
+
+.country .card img {
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: 20px;
+}
+
+.country .card h3 {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.country .card p {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.cont {
+    width: 100%;
+}
+
+.cont .back {
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.cont .data {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.cont .data .img
+{
+    width: 100%;
+}
+.cont .data .img img
+{
+    width: 100%;
+    border-radius: 6px;
+}
+.cont .data .data-title {
+    gap: 130px;
+    display: flex;
+    align-items: center;
+}
+
+.cont .data .data-title h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.cont .data .data-title p {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.cont .data .data-title p span {
+    color: rgb(127, 124, 124);
+}
+
+.cont .border {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 5px;
+    text-align: center;
+    color: rgb(127, 124, 124);
+
+}
+
+.cont .border button {
+    padding: 5px 13px;
+    font-size: 10px;
+    background-color: transparent;
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1285px) {
+    .cont .data {
+        gap: 10px;
+    }
+
+    .cont .data .data-title {
+        gap: 20px;
+    }
+    .cont .data .data-title
+    {
+        gap: 0px;
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    .country {
+        gap: 40px;
+    }
+    .cont .data
+    {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .main form .search {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 753px) {
+    .country {
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 705px) {
+    .country {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .navigation {
+        padding: 10px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main form .search {
+        width: 300px;
+        margin-bottom: 20px;
+        height: 40px;
+    }
+
+    .main #region-select {
+        width: 300px;
+        padding: 10px;
+    }
+
+    .navigation a {
+        font-size: 20px;
+    }
+
+    .navigation .dark {
+        font-size: 14px;
+    }
+    .cont .data .data-title{
+        display: flex;
+        flex-direction: column;
+    }
+    .cont .data .data-title .right
+    {
+    }
+}
+
+@media screen and (max-width: 340px) {
+    #darkModeToggle p {
+        display: none;
+    }
+    .wrapper
+    {
+        padding: 20px;
+    }
+    .main form .search {
+        width: 180px;
+        margin-bottom: 20px;
+        height: 40px;
+    }
+
+    .main #region-select {
+        width: 180px;
+        padding: 10px;
+    }
+}
