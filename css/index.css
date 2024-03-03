@@ -91,7 +91,6 @@ li {
     border: none;
     outline: none;
     background-color: transparent;
-    color: black;
 }
 
 .main form .search #fa-solid {
@@ -103,9 +102,7 @@ li {
     border: none;
     outline: none;
     background-color: transparent;
-    border-bottom: 1px solid rgba(99, 99, 99, 0.2);
-    border-top: 1px solid rgba(99, 99, 99, 0.2);
-    border-left: 1px solid rgba(99, 99, 99, 0.2);
+    border: 1px solid rgba(99, 99, 99, 0.2);
 }
 
 .filter {
@@ -171,12 +168,11 @@ li {
 .cont .back {
     padding: 5px 10px;
     background-color: transparent;
-    border: 2px solid rgba(99, 99, 99, 0.2);
-    border-radius: 4px;
-    color: #ccc;
+    color: black;
     cursor: pointer;
     margin-bottom: 50px;
     font-size: 20px;
+    border: none;
 }
 
 .cont .data {

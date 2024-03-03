@@ -24,7 +24,7 @@ function createOneCard(country) {
 function createCountry(country) {
     return `
     <div class="cont">
-        <button id="back" class="back"><- Back</button>
+        <button id="back" class="back"><i class="fa-solid fa-arrow-left"></i> Back</button>
             <div class="data">
                 <div class="img">
                     <img src="${country.flags.png}" alt="">
@@ -54,5 +54,6 @@ function createCountry(country) {
     </div>
     `
 }
+
 
 export { createCard, createCountry, createOneCard }

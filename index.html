@@ -8,31 +8,12 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="stylesheet" href="./css/loader.css">
     <title>Where is the world</title>
 </head>
 
 <body id="body">
     <div class="loading">
-        <div class="scene">
-            <div class="shadow"></div>
-            <div class="jumper">
-              <div class="spinner">
-                <div class="scaler">
-                  <div class="loader">
-                    <div class="cuboid">
-                      <div class="cuboid__side">✈️</div>
-                      <div class="cuboid__side">✈️</div>
-                      <div class="cuboid__side">✈️</div>
-                      <div class="cuboid__side">✈️</div>
-                      <div class="cuboid__side">✈️</div>
-                      <div class="cuboid__side">✈️</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <h1>loading...</h1>
     </div>
 
     <div id="allWrapper">
@@ -49,21 +30,20 @@
         <main class="main">
             <form class="main-form">
                 <label class="search">
-                    <input id="search" type="text" placeholder="Search for a country...">
                     <i id="fa-solid" class="fa-solid fa-magnifying-glass"></i>
+                    <input id="search" type="text" placeholder="Search for a country...">
                 </label>
             </form>
-        <div style="display: flex; align-items: center;">
-            <select id="region-select">
-                <option value="filter">Filter by region</option>
-                <option value="Africa">Africa</option>
-                <option value="Americas">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
-            <button class="filter" id="filter"><i id="fa-solid" class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+            <div style="display: flex; align-items: center;">
+                <select id="region-select">
+                    <option value="filter">Filter by region</option>
+                    <option id="op1" value="Africa">Africa</option>
+                    <option id="op2" value="Americas">America</option>
+                    <option id="op3" value="Asia">Asia</option>
+                    <option id="op4" value="Europe">Europe</option>
+                    <option id="op5" value="Oceania">Oceania</option>
+                </select>
+            </div>
         </main>
         <div id="country" class="country">
 
@@ -72,7 +52,6 @@
 
 
     <script type="module" src="./js/index.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css"></script>
 </body>
 
