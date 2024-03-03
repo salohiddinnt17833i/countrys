@@ -95,15 +95,27 @@ li {
 }
 
 .main form .search #fa-solid {
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .main select {
-    padding: 14px;
+    padding: 12px;
     border: none;
     outline: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: transparent;
+    border-bottom: 1px solid rgba(99, 99, 99, 0.2);
+    border-top: 1px solid rgba(99, 99, 99, 0.2);
+    border-left: 1px solid rgba(99, 99, 99, 0.2);
+}
+
+.filter {
+    padding: 13px;
+    border: none;
+    border-bottom: 1px solid rgba(99, 99, 99, 0.2);
+    border-top: 1px solid rgba(99, 99, 99, 0.2);
+    border-right: 1px solid rgba(99, 99, 99, 0.2);
+    background-color: transparent;
+    cursor: pointer;
 }
 
 #btn-chiqish {

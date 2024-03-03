@@ -13,7 +13,8 @@ const regionSelect = document.getElementById('region-select');
 const body = document.body;
 const loader = document.querySelector('.loading')
 const country = document.getElementById('country')
-
+const filterbtn = document.getElementById('filter')
+const scene = document.querySelector('.scene')
 let isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
 // Default styles that are the same for both dark and light modes
 const defaultStyles = {
@@ -114,8 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return res.json()
         })
         .then(result => {
+            console.log(result);
             wrapper.style.display = 'block'
             loader.style.display = 'none'
+            scene.style.display = 'none'
             result.data.forEach(data => {
                 const card = createCard(data)
                 country.innerHTML += card
@@ -154,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-regionSelect.addEventListener('click', function (e) {
+filterbtn.addEventListener('click', function (e) {
     e.preventDefault();
     fetch(`${BASE_URL}/countries?region=${regionSelect.value}`, {
         method: "GET"
@@ -200,6 +203,3 @@ regionSelect.addEventListener('click', function (e) {
             console.log(err);
         })
 })
-
-
-
