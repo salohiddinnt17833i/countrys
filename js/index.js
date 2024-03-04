@@ -10,11 +10,10 @@ const ahref = document.querySelector('.a');
 const darkLight = document.querySelector('.dark');
 const regionSelect = document.getElementById('region-select');
 const body = document.body;
-const loader = document.querySelector('.loading')
+const loaderNux = document.querySelector('#loader-nux')
 const country = document.getElementById('country')
 const back = document.getElementById('back')
-
-
+loaderNux.style.display = 'none'
 // Dark Mode
 let isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
 const defaultStyles = {
@@ -55,57 +54,14 @@ dark && dark.addEventListener('click', function (e) {
 });
 
 // Inoutga malumot kiritilganda davlatlarni chiqarish va ularni bosganda ichiga kirish
-inp.addEventListener("input", updateValue);
-function updateValue(e) {
-
-    fetch(`${BASE_URL}/countries?search=${e.target.value}`, {
-        method: "GET"
-    })
-        .then(res => res.json())
-        .then(result => {
-            country.innerHTML = '';
-
-            result.data.forEach(data => {
-                let card = createOneCard(data);
-                country.innerHTML += card;
-
-                const oneCard = document.getElementById('oneCard-' + data.name);
-                oneCard && oneCard.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    let isName = this.getAttribute('data-name');
-                    fetch(`${BASE_URL}/countries/${isName}`, {
-                        method: "GET"
-                    })
-                        .then(res => {
-                            if (res.ok) {
-                                return res.json();
-                            }
-                        })
-                        .then(data => {
-                            let oneCount = createCountry(data);
-                            country.innerHTML = oneCount;
-                            const back = document.getElementById('back');
-                            back && back.addEventListener('click', function () {
-                                window.location.reload();
-                            });
-                        })
-                        .catch(err => {
-                            console.log(err);
-                        });
-                });
-            });
-        })
-        .catch(err => {
-            console.log(err);
-        });
-}
+0
 
 // Sahifa yuklanganda barcha davlatlarni malummotini chiqarish
 const BASE_URL = `https://frontend-mentor-apis-6efy.onrender.com`;
 // Sahifa yuklanganda qora yoki oq fonda qolishi
 document.addEventListener('DOMContentLoaded', function () {
-    loader.style.display = 'block'
     wrapper.style.display = 'none'
+    loaderNux.style.display = 'block'
     darkModeFunction();
     fetch(`${BASE_URL}/countries`, {
         method: "GET"
@@ -116,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(result => {
             console.log(result);
             wrapper.style.display = 'block'
-            loader.style.display = 'none'
+            loaderNux.style.display = 'none'
             result.data.forEach(data => {
                 const card = createCard(data)
                 country.innerHTML += card
@@ -165,8 +121,8 @@ regionSelect.addEventListener("change", function (event) {
                 return res.json()
             })
             .then(result => {
-                country.innerHTML =
-                    wrapper.style.display = 'block'
+                country.innerHTML = ''
+                wrapper.style.display = 'block'
                 loader.style.display = 'none'
                 result.data.forEach(data => {
                     const card = createCard(data)
@@ -225,3 +181,47 @@ regionSelect.addEventListener("change", function (event) {
 });
 
 
+inp.addEventListener("input", updateValue);
+function updateValue(e) {
+
+    fetch(`${BASE_URL}/countries?search=${e.target.value}`, {
+        method: "GET"
+    })
+        .then(res => res.json())
+        .then(result => {
+            country.innerHTML = '';
+            result.data.forEach(data => {
+                let card = createCard(data);
+                country.innerHTML += card;
+                const cardd = document.querySelectorAll('#cardd')
+                cardd.forEach(res => {
+                    res.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        let isName = this.getAttribute('data-name')
+                        fetch(`${BASE_URL}/countries/${isName}`, {
+                            method: "GET"
+                        })
+                            .then(res => {
+                                if (res.ok) {
+                                    return res.json()
+                                }
+                            })
+                            .then(data => {
+                                let oneCount = createCountry(data)
+                                country.innerHTML = oneCount;
+                                const back = document.getElementById('back')
+                                back && back.addEventListener('click', function () {
+                                    window.location.reload()
+                                })
+                            })
+                            .catch(err => {
+                                console.log(err);
+                            })
+                    })
+                })
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}

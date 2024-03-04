@@ -54,6 +54,4 @@ function createCountry(country) {
     </div>
     `
 }
-
-
 export { createCard, createCountry, createOneCard }

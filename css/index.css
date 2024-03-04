@@ -145,6 +145,7 @@ li {
 
 .country .card img {
     width: 100%;
+    height: 160px;
     border-radius: 10px 10px 0px 0px;
     margin-bottom: 20px;
 }
@@ -191,7 +192,7 @@ li {
 }
 
 .cont .data .data-title {
-    gap: 130px;
+    gap: 100px;
     display: flex;
     align-items: center;
 }
