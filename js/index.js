@@ -162,7 +162,6 @@ regionSelect.addEventListener("change", function (event) {
                                 console.log(data);
                                 let oneCount = createCountry(data);
                                 country.innerHTML = oneCount;
-
                                 const back = document.getElementById('back');
                                 back && back.addEventListener('click', function () {
                                     window.location.reload();
