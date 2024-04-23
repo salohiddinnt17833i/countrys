@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                 }
                             })
                             .then(data => {
-                                console.log(data);
                                 let oneCount = createCountry(data)
                                 country.innerHTML = oneCount;
                                 const back = document.getElementById('back')

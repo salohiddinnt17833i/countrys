@@ -39,9 +39,7 @@ function createCountry(country) {
                         <p>Capital: <span>${country.capital}</span></p>
                         <div class="border">
                             <h5>Border Countries: </h5>
-                            <button>${country.borders.common}</button>
-                            <button>${country.borders.common}</button>
-                            <button>${country.borders.common}</button>
+                        
                         </div>
                     </div>
                     <div class="right">
